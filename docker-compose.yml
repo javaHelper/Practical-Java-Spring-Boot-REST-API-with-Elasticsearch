@@ -1,0 +1,31 @@
+version: "3.7"
+
+networks:
+ dev-net:
+  name: dev-net
+  driver: bridge
+
+services:
+  elasticsearch:
+    platform: linux/amd64
+    image: elasticsearch:7.8.0
+    container_name: elasticsearch
+    restart: unless-stopped
+    networks:
+      - dev-net
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    environment:
+      discovery.type: single-node
+  kibana:
+    platform: linux/amd64
+    image: kibana:7.8.0
+    container_name: kibana
+    restart: unless-stopped
+    networks:
+      - dev-net
+    ports:
+      - "5601:5601"
+    depends_on:
+      - elasticsearch
