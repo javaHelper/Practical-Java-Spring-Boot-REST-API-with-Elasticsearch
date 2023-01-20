@@ -5,6 +5,12 @@ Note:
 - I've tested all the endpoints working fine locally. 
 - Make sure you're using docker-compose.yml attached in this code - Specific to Apple M1 chp.
 
+# ref:
+- https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
+- https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
+
+# Elastic Search
+
 - http://localhost:9200/
 
 <img width="560" alt="Screenshot 2023-01-20 at 6 21 41 PM" src="https://user-images.githubusercontent.com/54174687/213699264-5e7aef52-bea1-4dbb-bda5-eca164974fd1.png">
