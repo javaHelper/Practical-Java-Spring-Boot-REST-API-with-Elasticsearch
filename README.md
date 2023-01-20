@@ -9,6 +9,12 @@ Note:
 - https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation
 - https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl.html
 
+# Swagger UI
+- http://localhost:8001/webjars/swagger-ui/index.html
+
+
+
+
 # Elastic Search
 
 - http://localhost:9200/
