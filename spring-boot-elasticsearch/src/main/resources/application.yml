@@ -7,8 +7,8 @@ logging:
     
     
 spring:
-  main:
-    banner-mode: OFF
+#  main:
+#    banner-mode: OFF
   jackson:
     property-naming-strategy: SNAKE_CASE
     
@@ -27,6 +27,4 @@ management:
     export:
       elastic:
         step: 30s
-        host: http://localhost:9200 
-    
-    
+        host: http://localhost:9200

@@ -11,10 +11,11 @@ public class OpenApiConfig {
 
 	@Bean
 	public OpenAPI practicalJavaOpenApi() {
-		var info = new Info().title("Practical Java API")
-				.description("OpenApi (Swagger) documentation auto generated from code").version("1.0");
+		var info = new Info()
+				.title("Practical Java API")
+				.description("OpenApi (Swagger) documentation auto generated from code")
+				.version("1.0");
 
 		return new OpenAPI().info(info);
 	}
-
 }

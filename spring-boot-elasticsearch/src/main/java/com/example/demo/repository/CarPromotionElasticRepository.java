@@ -7,5 +7,5 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import com.example.demo.entity.CarPromotion;
 
 public interface CarPromotionElasticRepository extends ElasticsearchRepository<CarPromotion, String>{
-	public Page<CarPromotion> findByType(String type, Pageable pageable);
+	Page<CarPromotion> findByType(String type, Pageable pageable);
 }

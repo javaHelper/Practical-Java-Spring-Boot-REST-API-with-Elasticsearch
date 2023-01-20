@@ -10,6 +10,6 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import com.example.demo.entity.Car;
 
 public interface CarElasticRepository extends ElasticsearchRepository<Car, String>{
-	public Page<Car> findByBrandAndColor(String brand, String color, Pageable pageable);
-	public List<Car> findByFirstReleaseDateAfter(LocalDate date);
+	Page<Car> findByBrandAndColor(String brand, String color, Pageable pageable);
+	List<Car> findByFirstReleaseDateAfter(LocalDate date);
 }

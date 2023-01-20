@@ -3,6 +3,7 @@ package com.example.demo.entity;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.elasticsearch.annotations.DateFormat;
 import org.springframework.data.elasticsearch.annotations.Document;
@@ -22,7 +23,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Document(indexName = "practical-java")
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
+@JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

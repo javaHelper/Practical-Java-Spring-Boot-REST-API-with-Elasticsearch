@@ -11,8 +11,10 @@ public class WebClientConfig {
 
 	@Bean(name = "webClientElasticsearch")
 	public WebClient webClientElasticsearch() {
-		return WebClient.builder().baseUrl("http://localhost:9200")
-				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE).build();
+		return WebClient.builder()
+				.baseUrl("http://localhost:9200")
+				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
+				.build();
 	}
 
 }
