@@ -38,7 +38,7 @@ public class DefaultRestApi {
 
 	@GetMapping(value = "/header-one")
 	public String headerByAnnotation(@RequestHeader(name = "User-agent") String headerUserAgent,
-			@RequestHeader(name = "Practical-java", required = false) String headerPracticalJava) {
+									 @RequestHeader(name = "Practical-java", required = false) String headerPracticalJava) {
 		return "User-agent : " + headerUserAgent + ", Practical-java : " + headerPracticalJava;
 	}
 

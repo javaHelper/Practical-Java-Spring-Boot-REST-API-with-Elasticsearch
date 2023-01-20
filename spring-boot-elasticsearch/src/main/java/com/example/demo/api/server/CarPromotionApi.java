@@ -26,7 +26,8 @@ public class CarPromotionApi {
 
 	@GetMapping(value = "/promotions")
 	public List<CarPromotion> listAvailablePromotions(@RequestParam(name = "type") String promotionType,
-			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+													  @RequestParam(defaultValue = "0") int page,
+													  @RequestParam(defaultValue = "10") int size) {
 		if (!carPromotionService.isValidPromotionType(promotionType)) {
 			throw new IllegalApiParamException("Invalid promotion type : " + promotionType);
 		}

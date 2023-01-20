@@ -104,8 +104,9 @@ public class CarApi {
 	}
 
 	@GetMapping(value = "/find-json", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public List<Car> findCarsByBrandAndColor(@RequestBody Car car, @RequestParam(defaultValue = "0") int page,
-			@RequestParam(defaultValue = "10") int size) {
+	public List<Car> findCarsByBrandAndColor(@RequestBody Car car,
+											 @RequestParam(defaultValue = "0") int page,
+											 @RequestParam(defaultValue = "10") int size) {
 		var pageable = PageRequest.of(page, size, Sort.by(Direction.DESC, "price"));
 		return carRepository.findByBrandAndColor(car.getBrand(), car.getColor(), pageable).getContent();
 	}
@@ -125,8 +126,7 @@ public class CarApi {
 
 		if (StringUtils.isNumeric(color)) {
 			var errorResponse = new ErrorResponse("Invalid color : " + color, LocalDateTime.now());
-
-			return new ResponseEntity<Object>(errorResponse, headers, HttpStatus.BAD_REQUEST);
+			return new ResponseEntity<>(errorResponse, headers, HttpStatus.BAD_REQUEST);
 		}
 
 		var pageable = PageRequest.of(page, size);
@@ -136,8 +136,10 @@ public class CarApi {
 	}
 
 	@GetMapping(value = "/cars")
-	public List<Car> findCarsByParam(@RequestParam String brand, @RequestParam String color,
-			@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "10") int size) {
+	public List<Car> findCarsByParam(@RequestParam String brand,
+									 @RequestParam String color,
+									 @RequestParam(defaultValue = "0") int page,
+									 @RequestParam(defaultValue = "10") int size) {
 		if (StringUtils.isNumeric(color)) {
 			throw new IllegalArgumentException("Invalid color : " + color);
 		}
@@ -151,8 +153,8 @@ public class CarApi {
 	}
 
 	@GetMapping(value = "/cars/date")
-	public List<Car> findCarsReleasedAfter(
-			@RequestParam(name = "first_release_date") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate firstReleaseDate) {
+	public List<Car> findCarsReleasedAfter(@RequestParam(name = "first_release_date")
+										   @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate firstReleaseDate) {
 		return carRepository.findByFirstReleaseDateAfter(firstReleaseDate);
 	}
 
