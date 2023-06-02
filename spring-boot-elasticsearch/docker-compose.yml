@@ -1,3 +1,4 @@
+# This works on mac M1 chip
 version: "3.7"
 networks:
   dev-net:
