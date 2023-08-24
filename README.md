@@ -1,5 +1,7 @@
 # Practical-Java-Spring-Boot-REST-API-with-Elasticsearch
 
+Done and dusted
+
 Note: 
 - Import "practical-java-postman-collection.json" file in postman. 
 - I've tested all the endpoints working fine locally. 
